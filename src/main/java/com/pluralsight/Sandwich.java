@@ -11,13 +11,19 @@ public class Sandwich implements CartItem {
     private double basePrice; // Starting price will be added by toppings
 
     // Constructor
-    public Sandwich(String size, String bread, boolean toasted, double basePrice){
-        this.size = size;
-        this.bread = bread;
-        this.toasted = toasted;
-        this.basePrice = basePrice;
-        this.toppings = new ArrayList<>();
+
+
+    public Sandwich() {
     }
+
+    public Sandwich(double basePrice, String bread, String size, boolean toasted, ArrayList<Topping> toppings) {
+        this.basePrice = basePrice;
+        this.bread = bread;
+        this.size = size;
+        this.toasted = toasted;
+        this.toppings = toppings;
+    }
+
 
     // Getters
 
@@ -40,10 +46,18 @@ public class Sandwich implements CartItem {
 
 
     // Method to add topping to Sandwich
+
     public void addTopping(Topping topping){
         toppings.add(topping);
     }
 
+    public ArrayList<Topping> getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(ArrayList<Topping> toppings) {
+        this.toppings = toppings;
+    }
 
     // Add total price of basePrice + Toppings
     @Override
