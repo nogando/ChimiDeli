@@ -1,4 +1,32 @@
 package com.pluralsight;
 
-public class Chips {
+public class Chips implements CartItem {
+
+    private String type;   // Lays, Doritos, Cheetos
+    private double price;  // Flat rate for chips
+
+    // Constructor
+    public Chips(String type, double price) {
+        this.type = type;
+        this.price = price;
+    }
+
+    // Getters
+    public String getType() {
+        return type;
+    }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+    // Display Info
+    @Override
+    public String toString() {
+        return "Chips{" +
+                "price=" + price +
+                ", type='" + type + '\'' +
+                '}';
+    }
 }
