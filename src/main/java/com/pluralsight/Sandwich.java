@@ -16,12 +16,12 @@ public class Sandwich implements CartItem {
     public Sandwich() {
     }
 
-    public Sandwich(double basePrice, String bread, String size, boolean toasted, ArrayList<Topping> toppings) {
-        this.basePrice = basePrice;
-        this.bread = bread;
+    public Sandwich(String size, String bread, boolean toasted, double basePrice) {
         this.size = size;
+        this.bread = bread;
         this.toasted = toasted;
-        this.toppings = toppings;
+        this.basePrice = basePrice;
+        this.toppings = new ArrayList<>();
     }
 
 
