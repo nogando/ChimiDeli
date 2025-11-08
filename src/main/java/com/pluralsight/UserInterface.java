@@ -47,15 +47,19 @@ public class UserInterface {
     }
 
     private void checkout() {
-        // This method will handle payment and finishing the order later
+        //todo This method will handle payment and finishing the order later
     }
 
     private void addChips() {
-        // This will let the user pick a type of chips later
+        //todo This will let the user pick a type of chips later
+
     }
 
     private void addDrink() {
-        // This will let the user pick a drink later
+        //todo This will let the user pick a drink later
+
+
+
     }
 
     private void addSandwich() {
@@ -210,6 +214,9 @@ public class UserInterface {
                 };
                 // if name is valid, add topping to sandwich
                 if (name != null) sandwich.addTopping(new Topping(name, type, price));
+
+                //todo add a prompt for extra meat and cheese
+
             } catch (NumberFormatException ignored) {
                 // ignore bad input like letters
             }

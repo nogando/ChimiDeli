@@ -22,10 +22,8 @@ public class Drink implements CartItem {
         return size;
     }
 
-    @Override
-    public double getPrice() {
-        return price;
-    }
+
+
     // Display Info
     @Override
     public String toString() {
@@ -35,4 +33,12 @@ public class Drink implements CartItem {
                 ", price=" + price +
                 '}';
     }
+
+    @Override
+    public double getPrice() {
+        return price;
+    }
+
+
+
 }
