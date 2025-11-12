@@ -4,27 +4,23 @@ public class Drink implements CartItem {
 
     private String flavor;   // Coke, Sprite, Lemonade
     private String size;     // Small, Medium, Large
-    private double price;    // Base price depending on size
+    private double price;    // Set by size inside constructor
 
-    // Constructor
-    public Drink(String flavor, String size, double price) {
+    public Drink(String flavor, String size) {
         this.flavor = flavor;
         this.size = size;
-        this.price = price;
+        this.price = switch (size) {
+            case "Small"  -> 1.50;
+            case "Medium" -> 2.00;
+            case "Large"  -> 2.50;
+            default       -> 2.00;
+        };
     }
 
-    // Getters
-    public String getFlavor() {
-        return flavor;
-    }
+    public String getFlavor() { return flavor; }
+    public String getSize() { return size; }
+    @Override public double getPrice() { return price; }
 
-    public String getSize() {
-        return size;
-    }
-
-
-
-    // Display Info
     @Override
     public String toString() {
         return "Drink{" +
@@ -33,12 +29,5 @@ public class Drink implements CartItem {
                 ", price=" + price +
                 '}';
     }
-
-    @Override
-    public double getPrice() {
-        return price;
-    }
-
-
-
 }
+
