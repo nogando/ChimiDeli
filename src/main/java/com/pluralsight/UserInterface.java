@@ -111,6 +111,7 @@ public class UserInterface {
             }
         }
     }
+
     // ========== DRINK SECTION ==========
     private void addDrink() {
         System.out.println("\n========= Add a Drink =========");
