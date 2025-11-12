@@ -61,11 +61,56 @@ public class UserInterface {
         //todo build this later
     }
 
-    // Placeholder for chips option (to be added later)
+    // ========== CHIPS SECTION ==========
     private void addChips() {
-        //todo make this later
-    }
+        System.out.println("\n========= Add Chips =========");
 
+        boolean adding = true; // lets user keep adding chips
+        while (adding) {
+            try {
+                // Ask user for chip flavor
+                System.out.println("""
+        \n====== Chip Flavors ======
+        1) Lays Original
+        2) Doritos Nacho Cheese
+        3) Cheetos
+        4) Sun Chips
+        5) BBQ Chips
+        """);
+                System.out.print("Choose your chips: ");
+                int flavorChoice = scanner.nextInt();
+                scanner.nextLine(); // clear buffer
+
+                // Convert number to flavor
+                String flavor = switch (flavorChoice) {
+                    case 1 -> "Lays Original";
+                    case 2 -> "Doritos Nacho Cheese";
+                    case 3 -> "Cheetos";
+                    case 4 -> "Sun Chips";
+                    case 5 -> "BBQ Chips";
+                    default -> {
+                        System.out.println("Invalid option. Defaulting to Lays Original.");
+                        yield "Lays Original";
+                    }
+                };
+
+                // Create new Chips object (flat price inside class)
+                Chips chips = new Chips(flavor);
+
+                // Add to cart
+                cart.addChips(chips);
+                System.out.println("Chips added to cart: " + chips);
+
+                // Ask if they want to add more
+                System.out.print("\nAdd another chips? (y/n): ");
+                adding = scanner.nextLine().trim().equalsIgnoreCase("y");
+
+            } catch (InputMismatchException e) {
+                System.out.println("Wrong input. Please enter a number.");
+                scanner.nextLine();
+            }
+        }
+    }
     // ========== DRINK SECTION ==========
     private void addDrink() {
         System.out.println("\n========= Add a Drink =========");
@@ -280,8 +325,7 @@ public class UserInterface {
         // Different topping lists for each category
         String[] meatChoices    = {"Steak", "Ham", "Salami", "Roast Beef", "Chicken", "Bacon"};
         String[] cheeseChoices  = {"American", "Provolone", "Swiss", "Cheddar"};
-        String[] regularChoices = {"Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapeños",
-                "Cucumbers", "Pickles", "Guacamole", "Mushrooms"};
+        String[] regularChoices = {"Lettuce", "Peppers", "Onions", "Tomatoes", "Jalapeños","Cucumbers", "Pickles", "Guacamole", "Mushrooms"};
         String[] sauceChoices   = {"Mayo", "Mustard", "Ketchup", "Ranch", "Thousand Islands", "Vinaigrette"};
 
         // Pick the correct list based on type

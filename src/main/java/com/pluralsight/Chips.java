@@ -6,9 +6,9 @@ public class Chips implements CartItem {
     private double price;  // Flat rate for chips
 
     // Constructor
-    public Chips(String type, double price) {
-        this.type = type;
-        this.price = price;
+    public Chips(String flavor) {
+        this.type = flavor;
+        this.price = 1.50; // flat rate for all chips
     }
 
     // Getters
