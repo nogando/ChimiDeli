@@ -1,0 +1,40 @@
+=====================================
+               CHIMI DELI
+           CUSTOMER RECEIPT
+=====================================
+
+Order ID:  20251113_113806
+Date/Time: 2025-11-13  11:38:06
+-------------------------------------
+
+-------------------------------------
+ITEMS ORDERED:
+-------------------------------------
+
+SANDWICH (4")
+  Bread:   White
+  Toasted: Yes
+  Toppings:
+    - Steak
+    - Provolone
+    - Extra Provolone
+    - Peppers
+    - Onions
+    - Jalapeños
+    - Mushrooms
+    - Mayo
+  Price: $7.55
+
+DRINK
+  Size:   Small
+  Flavor: Coke w/ Ice
+  Price: $1.50
+
+CHIPS
+  Flavor: Doritos Nacho Cheese
+  Price: $1.50
+
+-------------------------------------
+Total: $10.55
+Thank you for choosing ChimiDeli!
+=====================================

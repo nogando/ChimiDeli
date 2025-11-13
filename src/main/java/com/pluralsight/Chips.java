@@ -24,9 +24,12 @@ public class Chips implements CartItem {
     // Display Info
     @Override
     public String toString() {
-        return "Chips{" +
-                "price=" + price +
-                ", type='" + type + '\'' +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Chips: ").append(type).append("\n");
+        sb.append(String.format("  Price: $%.2f", getPrice()));
+
+        return sb.toString();
     }
+
 }

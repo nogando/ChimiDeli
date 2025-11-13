@@ -68,16 +68,27 @@ public class Sandwich implements CartItem {
         }
         return total;
     }
-
     // Display Info
     @Override
     public String toString() {
-        return "Sandwich{" +
-                "basePrice=" + basePrice +
-                ", size='" + size + '\'' +
-                ", bread='" + bread + '\'' +
-                ", toasted=" + toasted +
-                ", toppings=" + toppings +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Sandwich: ").append(size).append("\" ")
+                .append(bread).append(toasted ? " (Toasted)" : "")
+                .append("\n");
+
+        if (!toppings.isEmpty()) {
+            sb.append("  Toppings: ");
+            for (int i = 0; i < toppings.size(); i++) {
+                sb.append(toppings.get(i).getName());
+                if (i < toppings.size() - 1) sb.append(", ");
+            }
+            sb.append("\n");
+        }
+
+        sb.append(String.format("  Price: $%.2f", getPrice()));
+
+        return sb.toString();
     }
+
 }

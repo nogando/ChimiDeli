@@ -21,13 +21,19 @@ public class Drink implements CartItem {
     public String getSize() { return size; }
     @Override public double getPrice() { return price; }
 
+    // Display Info
     @Override
     public String toString() {
-        return "Drink{" +
-                "flavor='" + flavor + '\'' +
-                ", size='" + size + '\'' +
-                ", price=" + price +
-                '}';
+        StringBuilder sb = new StringBuilder();
+
+        sb.append("Drink: ").append(flavor)
+                .append(" (").append(size).append(")")
+                .append("\n");
+
+        sb.append(String.format("  Price: $%.2f", getPrice()));
+
+        return sb.toString();
     }
+
 }
 
