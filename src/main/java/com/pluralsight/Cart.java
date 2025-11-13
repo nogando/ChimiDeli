@@ -15,6 +15,13 @@ public class Cart {
         drinks = new ArrayList<>();
         chips = new ArrayList<>();
     }
+    // Copy Constructor to make checkout work
+    public Cart(Cart other) {
+        this.sandwiches = new ArrayList<>(other.getSandwiches());
+        this.drinks = new ArrayList<>(other.getDrinks());
+        this.chips = new ArrayList<>(other.getChips());
+    }
+
 
     // Add items methods
     public void addSandwich(Sandwich s) {

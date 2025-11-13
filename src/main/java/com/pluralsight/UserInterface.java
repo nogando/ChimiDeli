@@ -56,10 +56,55 @@ public class UserInterface {
         }
     }
 
-    // Placeholder for the checkout feature (to be finished later)
+    // ========== CHECKOUT SECTION ==========
     private void checkout() {
-        //todo build this later
+        System.out.println("\n========= Checkout =========");
+
+        if (cart.isEmpty()) {
+            System.out.println("Your cart is empty. Add something first.");
+            return;
+        }
+
+        // Let user clean up the cart before finalizing
+        modifyCartBeforeCheckout();
+
+        // They might have removed everything
+        if (cart.isEmpty()) {
+            System.out.println("Your cart is now empty. Checkout cancelled.");
+            return;
+        }
+
+        // Show final cart
+        System.out.println("\nFinal cart:");
+        System.out.println(cart.view());
+
+        // Confirm order
+        System.out.print("Place order and save receipt? (y/n): ");
+        String answer = scanner.nextLine().trim();
+
+        if (!answer.equalsIgnoreCase("y")) {
+            System.out.println("Checkout cancelled. You can keep shopping.");
+            return;
+        }
+
+        try {
+            // Build an Order from the current cart
+            // You can design this constructor to copy items from the cart into the order
+            Cart order = new Cart(cart);
+
+            // Save the receipt to a file
+            ReceiptManager.saveReceipt(order);
+
+            System.out.println("\nOrder complete. Receipt created.");
+
+            // Start with a fresh cart for next customer
+            cart = new Cart();
+
+        } catch (Exception e) {
+            System.out.println("There was a problem finishing your order: " + e.getMessage());
+        }
     }
+
 
     // ========== CHIPS SECTION ==========
     private void addChips() {
@@ -409,5 +454,121 @@ public class UserInterface {
             default -> 0.60;
         };
     }
+
+    // Lets the user remove items from the cart before checkout
+    private void modifyCartBeforeCheckout() {
+        boolean editing = true;
+
+        while (editing && !cart.isEmpty()) {
+            System.out.println("\n========= Review Cart Before Checkout =========");
+            System.out.println(cart.view());
+
+            System.out.println("""
+                What would you like to do?
+                1) Remove a sandwich
+                2) Remove a drink
+                3) Remove chips
+                0) Done editing
+                """);
+            System.out.print("Choose an option: ");
+
+            String input = scanner.nextLine().trim();
+            int choice;
+
+            try {
+                choice = Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a number.");
+                continue;
+            }
+
+            switch (choice) {
+                case 1 -> removeSandwichFromCart();
+                case 2 -> removeDrinkFromCart();
+                case 3 -> removeChipsFromCart();
+                case 0 -> editing = false;
+                default -> System.out.println("Invalid choice.");
+            }
+        }
+    }
+
+    // Remove a sandwich by number
+    private void removeSandwichFromCart() {
+        if (cart.getSandwiches().isEmpty()) {
+            System.out.println("There are no sandwiches in the cart.");
+            return;
+        }
+
+        System.out.println("\nSandwiches:");
+        for (int i = 0; i < cart.getSandwiches().size(); i++) {
+            System.out.println((i + 1) + ") " + cart.getSandwiches().get(i));
+        }
+        System.out.print("Which sandwich number would you like to remove? ");
+
+        try {
+            int index = Integer.parseInt(scanner.nextLine().trim()) - 1;
+            Sandwich removed = cart.removeSandwich(index);
+            if (removed != null) {
+                System.out.println("Removed: " + removed);
+            } else {
+                System.out.println("Invalid sandwich number.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a number.");
+        }
+    }
+
+    // Remove a drink by number
+    private void removeDrinkFromCart() {
+        if (cart.getDrinks().isEmpty()) {
+            System.out.println("There are no drinks in the cart.");
+            return;
+        }
+
+        System.out.println("\nDrinks:");
+        for (int i = 0; i < cart.getDrinks().size(); i++) {
+            System.out.println((i + 1) + ") " + cart.getDrinks().get(i));
+        }
+        System.out.print("Which drink number would you like to remove? ");
+
+        try {
+            int index = Integer.parseInt(scanner.nextLine().trim()) - 1;
+            Drink removed = cart.removeDrink(index);
+            if (removed != null) {
+                System.out.println("Removed: " + removed);
+            } else {
+                System.out.println("Invalid drink number.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a number.");
+        }
+    }
+
+    // Remove chips by number
+    private void removeChipsFromCart() {
+        if (cart.getChips().isEmpty()) {
+            System.out.println("There are no chips in the cart.");
+            return;
+        }
+
+        System.out.println("\nChips:");
+        for (int i = 0; i < cart.getChips().size(); i++) {
+            System.out.println((i + 1) + ") " + cart.getChips().get(i));
+        }
+        System.out.print("Which chips number would you like to remove? ");
+
+        try {
+            int index = Integer.parseInt(scanner.nextLine().trim()) - 1;
+            Chips removed = cart.removeChips(index);
+            if (removed != null) {
+                System.out.println("Removed: " + removed);
+            } else {
+                System.out.println("Invalid chips number.");
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Please enter a number.");
+        }
+    }
+
 }
 
