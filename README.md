@@ -34,3 +34,5 @@ This project is perfect if you want to learn:
 It keeps everything simple and readable so you can build confidence as you go.
 
 ---
+This is additional Resources i used especially for the GUI
+https://www.youtube.com/watch?v=Kmgo00avvEw&t=5908s
