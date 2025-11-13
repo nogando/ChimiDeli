@@ -101,6 +101,9 @@ I used this video heavily when building the GUI and understanding how menus and 
 Java Full Course for Beginners — Bro Code
 https://www.youtube.com/watch?v=Kmgo00avvEw&t=5908s
 
+Java JOptionPane - Bro Code
+https://www.youtube.com/watch?v=BuW7y21FcYI
+
 This video covers:
 
 Methods
