@@ -46,9 +46,7 @@ Every menu interaction is a real example of flow control.
 Instead of giant messy classes, you learn how to break each task into its own method.
 This builds real programming discipline.
 
-🧠 Additional Java Concepts You’ll Practice
-
-You asked for inheritance and interfaces — so here’s how they fit into your project in a clean, beginner-friendly way.
+## 🧠 Additional Java Concepts You’ll Practice
 
 Inheritance
 You can create a base class like MenuItem with properties such as name and price.
@@ -64,7 +62,7 @@ Less repetition
 
 A more professional structure
 
-Example idea (not code you need to copy right now):
+Example idea
 
 class MenuItem {
     protected double price;
@@ -93,7 +91,7 @@ Then every item in your menu follows the same rules. This makes things like rece
 Why this matters for beginners:
 It teaches you how to organize code like a professional long before you start building GUI applications or bigger projects.
 
-📺 Additional Resources
+## 📺 Additional Resources
 
 I used this video heavily when building the GUI and understanding how menus and user input should flow:
 
