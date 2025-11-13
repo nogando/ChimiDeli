@@ -18,6 +18,9 @@ This project is a beginner friendly console based ordering system inspired by a 
 <img width="363" height="800" alt="Reciept txt file in reciepts folder " src="https://github.com/user-attachments/assets/b8066ba6-a8f5-400d-88c3-68480a44c636" />
 
 
+### Diagram Structure
+<img width="854" height="520" alt="diagram for capstone" src="https://github.com/user-attachments/assets/ded37da7-e97f-4955-bf0b-8e3492e668dd" />
+
 ---
 
 ## 🎯 What This Project Teaches
