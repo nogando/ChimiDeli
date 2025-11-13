@@ -7,13 +7,16 @@ This project is a beginner friendly console based ordering system inspired by a 
 ## 📷 Screenshots
 
 ### Main Menu
-![CLI Menu](CLI.png)
+<img width="327" height="220" alt="CLI" src="https://github.com/user-attachments/assets/fe02ca10-25bd-4547-9dd7-78a7f14984f7" />
+
 
 ### Cart Screen
-![Cart Screen](Cart Screen.png)
+<img width="573" height="221" alt="Cart Screen" src="https://github.com/user-attachments/assets/7d37c4db-0fed-4c97-9707-43e9dacdc8b3" />
+
 
 ### Receipt Example
-![Receipt](Reciept txt file in reciepts folder .png)
+<img width="363" height="800" alt="Reciept txt file in reciepts folder " src="https://github.com/user-attachments/assets/b8066ba6-a8f5-400d-88c3-68480a44c636" />
+
 
 ---
 
