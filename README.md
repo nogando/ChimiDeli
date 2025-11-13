@@ -22,17 +22,104 @@ This project is a beginner friendly console based ordering system inspired by a 
 
 ## 🎯 What This Project Teaches
 
-This project is perfect if you want to learn:
+ChimiDeli is a perfect starter project if you want to really understand how Java applications work. It's simple enough for beginners, but structured the way real programs are built.
 
-* How to structure a Java application
-* How to use classes for things like sandwiches, carts, and receipts
-* How to take user input with `Scanner`
-* How to print clean formatted output
-* How to use loops, conditionals, and try/catch blocks
-* How to break big tasks into simple methods
+You’ll learn how to:
 
-It keeps everything simple and readable so you can build confidence as you go.
+1. Structure a Java Application
+You see how files like UserInterface, Cart, Sandwich, and ReceiptManager each have their own responsibilities. This helps you understand clean architecture early.
 
----
-This is additional Resources i used especially for the GUI
+2. Use Classes and Objects Effectively
+Sandwiches, drinks, chips, and cart items all become objects.
+You learn how to store data inside them, update them, and pass them around your program.
+
+3. Work with User Input (Scanner)
+The console menu teaches you how to read numbers, strings, and handle mistakes with try/catch.
+
+4. Print Clean, Formatted Output
+Your cart screen and printed receipts help you practice layout, spacing, and readable text formatting.
+
+5. Use Loops, Conditionals, and Try/Catch Blocks
+Every menu interaction is a real example of flow control.
+
+6. Break Large Problems into Simple Methods
+Instead of giant messy classes, you learn how to break each task into its own method.
+This builds real programming discipline.
+
+🧠 Additional Java Concepts You’ll Practice
+
+You asked for inheritance and interfaces — so here’s how they fit into your project in a clean, beginner-friendly way.
+
+Inheritance
+You can create a base class like MenuItem with properties such as name and price.
+Then Sandwich, Drink, and Chips can extend it.
+
+This gives you:
+
+Shared logic across items
+
+Cleaner code
+
+Less repetition
+
+A more professional structure
+
+Example idea (not code you need to copy right now):
+
+class MenuItem {
+    protected double price;
+    public double getPrice() { return price; }
+}
+
+class Sandwich extends MenuItem { ... }
+class Drink extends MenuItem { ... }
+class Chips extends MenuItem { ... }
+
+
+This is how real apps scale when you add new item types later.
+
+Interfaces
+Interfaces help you create a consistent design.
+For example, all items that can be added to the cart could implement:
+
+interface Purchasable {
+    double getPrice();
+    String getDescription();
+}
+
+
+Then every item in your menu follows the same rules. This makes things like receipts extremely easy.
+
+Why this matters for beginners:
+It teaches you how to organize code like a professional long before you start building GUI applications or bigger projects.
+
+📺 Additional Resources
+
+I used this video heavily when building the GUI and understanding how menus and user input should flow:
+
+Java Full Course for Beginners — Bro Code
 https://www.youtube.com/watch?v=Kmgo00avvEw&t=5908s
+
+This video covers:
+
+Methods
+
+Classes
+
+Objects
+
+Scanners
+
+GUI basics
+
+Action listeners
+
+Panels
+
+Frames
+
+Inheritance
+
+Interfaces
+
+And how to structure your logic step-by-step
