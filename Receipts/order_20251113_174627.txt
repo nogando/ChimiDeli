@@ -1,0 +1,28 @@
+=====================================
+               CHIMI DELI
+           CUSTOMER RECEIPT
+=====================================
+
+Order ID:  20251113_174627
+Date/Time: 2025-11-13  17:46:27
+-------------------------------------
+
+-------------------------------------
+ITEMS ORDERED:
+-------------------------------------
+
+SANDWICH (4")
+  Bread:   Wheat
+  Toasted: Yes
+  Toppings:
+    - Steak
+    - Provolone
+    - Lettuce
+    - Onions
+    - Mayo
+  Price: $7.25
+
+-------------------------------------
+Total: $7.25
+Thank you for choosing ChimiDeli!
+=====================================

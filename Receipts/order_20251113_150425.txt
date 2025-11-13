@@ -1,0 +1,39 @@
+=====================================
+               CHIMI DELI
+           CUSTOMER RECEIPT
+=====================================
+
+Order ID:  20251113_150425
+Date/Time: 2025-11-13  15:04:25
+-------------------------------------
+
+-------------------------------------
+ITEMS ORDERED:
+-------------------------------------
+
+SANDWICH (8")
+  Bread:   White
+  Toasted: Yes
+  Toppings:
+    - Steak
+    - Provolone
+    - Extra Provolone
+    - Peppers
+    - Onions
+    - Mushrooms
+    - Mayo
+  Price: $11.10
+
+DRINK
+  Size:   Small
+  Flavor: Coke w/ Ice
+  Price: $1.50
+
+CHIPS
+  Flavor: Lays Original
+  Price: $1.50
+
+-------------------------------------
+Total: $14.10
+Thank you for choosing ChimiDeli!
+=====================================
